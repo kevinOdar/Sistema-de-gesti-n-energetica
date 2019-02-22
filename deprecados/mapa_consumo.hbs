@@ -1,0 +1,127 @@
+{{#partial "contenido"}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title>Mapa de consumo</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
+</head>
+<body style="padding-left:20px;padding-right: 20px; ">	
+	<pw>Mapa de consumo</pw>
+	 <div id="mapa" style="height: 500px">
+	 	
+	 </div>
+
+</body>
+
+<script type="text/javascript">
+	$( document ).ready(function() {
+		mapa = L.map('mapa', {
+	    center: [-34.598313, -58.463745],
+	    zoom: 10,  
+	    minZoom: 4,
+	    maxZoom:17,
+	    zoomControl:true 
+		});
+		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	    attribution: ''}).addTo(mapa);
+
+		//var marker = L.marker([-34.598494, -58.420186]).addTo(mapa).bindPopup("<button class='btn btn-info' onclick='alert(\"Soy medrano\")'>No me toques(o Si)</button>");
+		
+		//var marker2 = L.marker([-34.659438,-58.4704135]).addTo(mapa).on('click', onClick);
+
+
+		
+		var polygon = L.polygon([
+				[-34.697878, -58.468897], // -34.533217, -58.464839
+			    [-34.686919, -58.486813], // -34.55243, -58.499172
+			    [-34.651905, -58.530758], // -34.614067, -58.529406
+			    [-34.614052, -58.529385], // -34.651921, -58.530757
+			    [-34.552432, -58.499172], // 
+			    [-34.533202, -58.46484],  // 
+			    [-34.582965, -58.381756], // 
+			    [-34.634075, -58.35159],  // 
+			    [-34.65924, -58.418313]   // 
+			],{
+				 color: 'red',
+				 fillColor: 'blue',
+			    fillOpacity: 0.1,
+			    radius: 300
+			}).addTo(mapa).on('click', onMapClick);
+
+		var poligonoMio_1 = L.polygon
+		([
+			[-34.614052, -58.529385],
+			[-34.608451, -58.493357], 
+			[-34.596759, -58.484001], 
+			[-34.559923, -58.502841]
+		 ],
+				{
+					color:'blue',
+					fillColor:'red',
+					fillOpacity: 1.0,
+					radius: 300
+				}
+		).addTo(mapa).on('click', onMapClick) ;
+
+		//var interseccionParteIzquierdaMapaCity = L.marker([-34.614052, -58.529385]).addTo(mapa).on('click', onClick); 
+		//var interseccionParteBaja_1_2 = L.marker([-34.608451, -58.493357]).addTo(mapa).on('click', onClick);
+		//var interseccionParteAlta_1_CABA = L.marker([-34.559923, -58.502841]).addTo(mapa).on('click', onClick);
+		//var interseccionParteAlta_1_2 = L.marker([-34.596777, -58.484001]).addTo(mapa).on('click', onClick);
+		//var poligonoMio2_aristaDerecha = L.marker([-34.604813, -58.456578]).addTo(mapa).on('click', onClick);
+
+		var poligonoMio_2 = L.polygon
+		([
+			[-34.559923, -58.502841],
+			[-34.596777, -58.484001],
+			[-34.604813, -58.456578],		
+			[-34.562132, -58.416796]
+		 ],
+				{
+					color:'blue',
+					fillColor:'red',
+					fillOpacity: 0.5,
+					radius: 300
+				}
+		).addTo(mapa).on('click', onMapClick) ;
+
+		
+
+		var poligonoMio_3 = L.polygon
+		([
+			[-34.596759, -58.484001] ,
+			[-34.608451, -58.493357] ,
+			[-34.610429, -58.473015] ,
+			[-34.604813, -58.45645]
+		 ],
+				{
+					color:'blue',
+					fillColor:'red',
+					fillOpacity: 0.2,
+					radius: 300
+				}
+		).addTo(mapa).on('click', onMapClick) ;
+
+		//PINES CONSUMO
+		var pinConsumo_1 = L.marker([-34.605378, -58.477478]).addTo(mapa).bindPopup("<button class='btn btn-info' onclick='alert(\"Consumo 100.000 KwH\")'>Id zona: 2</button>");
+
+		var pinConsumo_2 = L.marker([-34.591106, -58.502026]).addTo(mapa).bindPopup("<button class='btn btn-info' onclick='alert(\"Consumo 50.000 KwH\")'>Id zona: 2</button>");
+		
+		var pinConsumo_3 = L.marker([-34.579376, -58.462715]).addTo(mapa).bindPopup("<button class='btn btn-info' onclick='alert(\"Consumo 20.000 KwH\")'>Id zona: 2</button>");
+		
+
+		function onMapClick(e) {
+		    alert("Latitud y Longitud: " + e.latlng);
+		}
+
+	});
+	function onClick(e){
+		var r = confirm("Ir a medrano?");
+		if (r == true) {
+			mapa.setView(new L.LatLng((-34.598494), (-58.420186)), parseInt(17));
+		} else {
+		    
+		}
+	}
+</script>
+{{/partial}}
+{{>paginaBase.hbs}}

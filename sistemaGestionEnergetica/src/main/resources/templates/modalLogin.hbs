@@ -1,0 +1,18 @@
+{{#>modalBase.hbs}}
+{{#*inline "modalBody"}}
+        	 <div class="form-group">
+        	 
+                <label>Alias</label>
+                <input id="alias" type="string" name="alias" class="form-control" placeholder="Ingrese su alias">
+			
+				<label>Contraseña</label>
+                <input id="contrasenia" type="password" name="contrasenia" class="form-control" placeholder="Ingrese su contraseña">
+				<input type="checkbox" onclick="mostrarContrasenia()"> Mostrar				  
+            </div>
+{{/inline}}
+{{#*inline "modalFooter"}}
+            <button id="loguearUsuario" type="submit" class="btn btn-primary" onclick="loguearUsuario()">
+                Entrar
+            </button>
+ {{/inline}}
+{{/modalBase.hbs}}

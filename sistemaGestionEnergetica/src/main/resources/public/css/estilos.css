@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+*{
+    margin: 0;
+    padding:0;
+}
+body{
+    font-family: 'Lora', serif;
+    background-color:whitesmoke;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    background-attachment:fixed;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+.bodyc{
+    margin:0;
+    padding: 0;
+    border: 0;
+    font-family: 'Lora', serif;
+    background-color: azure;
+    background-size:100% 100%;
+    background-attachment:fixed;
+}
+
+p{
+color:black;
+font-size: 20 px;
+font-family: 'Lora';
+}
+
+
+.alineacion img{
+  float:right;
+  margin-top: 3%;
+  margin-left: 3%;
+  margin-right: 4%;
+}
+
+.alineacion p{
+  
+}
+
+pw{
+    color:black;
+    font-size: 35px;
+    font-family: 'Lora';
+}
+ps{
+    color:white;
+    font-size:1px;
+}
+
+h1w{
+    font-family:sans-serif;
+    color:black;
+    font-size: 95px;
+}
+h2w{
+    font-family:'Lora', serif;
+    color:white;
+    font-size: 45px;
+}
+hM{
+    font-family: serif;
+    color:darkslategrey;
+    font-size: 170px;
+}
+h3w{
+    font-family: 'Lora', serif;
+    color:black;
+    font-size: 45px;
+}
+
+.columnas{
+   column-count: 4;
+   text-align: justify;
+}
+.columnas2{
+   column-count: 5;
+   text-align: justify;
+}

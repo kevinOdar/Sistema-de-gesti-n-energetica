@@ -1,0 +1,16 @@
+{{#>modalBase.hbs}}
+{{#*inline "modalBody"}}
+<p> Elija el periodo </p>
+<div class="form-group">
+	<label for="fecha">Desde:
+	<input type="text" class="hasDatePicker" id="fechaDesde" value="" />
+	</label>
+	<label for="fecha">Hasta:
+	<input type="text" class="hasDatePicker" id="fechaHasta" value="" />
+	</label>
+</div>
+{{/inline}}
+{{#*inline "modalFooter"}}
+<button type="submit" class="btn btn-primary" onclick="setPeriodo('{{elemento}}')"> Aceptar </button>
+{{/inline}}
+{{/modalBase.hbs}}

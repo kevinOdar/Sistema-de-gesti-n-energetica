@@ -1,0 +1,52 @@
+{{#partial "contenido"}}
+
+<div class="container text-center">
+	<div class="text-center">
+		<h2>Reglas Activas</h2>
+
+	{{#each inteligentes}}
+	<div>
+	<p class="lead">
+	<dt>Reglas del dispositivo "{{caracteristica.nombre}}"</dt>
+	</p>
+		<div class="mx-auto" style="width: 480px;">
+		<table class="table table-responsive table-hover">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col"class="align-middle text-center">Nombre regla</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+			{{#each reglas}}
+				<tr>
+					<td scope="row" class="align-middle">{{nombre}}</td>
+					<td scope="row" class="align-middle">
+					<button type="button" class="btn btn-secondary btn-sm" onclick="reglaDetalle('{{id}}')"> Modificar </button>
+					</td>
+					<td scope="row" class="align-middle">
+					<button type="button" class="btn btn-danger btn-sm" onclick="reglaEliminar('{{id}}')"> Eliminar	</button>
+					</td>
+				</tr>
+				{{/each}}
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+	{{/each}}
+	</br>
+			<p></p>
+			<button type="button" class="btn btn-success btn-sm" onclick="reglaNueva('{{alias}}')">Nueva regla</button>
+		</div>
+</div>
+
+</br>
+</br>
+<h6 class="font-italic"> *Solo se muestran las reglas, existentes, asociadas a un determinado dispositivo inteligente </h6>
+
+<script type="text/javascript" src="/js/commons.js"></script>
+<script type="text/javascript" src="/js/reglas.js"></script>
+{{/partial}}
+{{>paginaBase.hbs}}

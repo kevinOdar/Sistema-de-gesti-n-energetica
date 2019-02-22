@@ -1,0 +1,30 @@
+[
+ {
+    "nombre" : "transf10A",
+    "coordenadas" : [
+    {
+    "latitud" : -34.1857985,
+    "longitud" : -58.2993031
+    }
+   ], 
+    "clientesConectados" : [
+      {
+    "nombre": "cosmeFulanito",
+    "edad": 24,
+    "tipoDocumento": "dni",
+	"numero documento": 232323,
+	"telefono": 4323,
+	"domicilio": "cucha cucha 2137",
+	"fecha_alta":  null,
+	"dispositivos": null,
+	"alias usuario": "atomix2009",
+	"categoria" : null,
+	"fechaAltaServicio" : null,
+	"puntosAcumulados": 15,
+	"ubicacion": null,
+	"consumoEnAutomatico": true
+     }
+   ],
+    "zonaGeografica" : "Zona1"
+ }   
+]

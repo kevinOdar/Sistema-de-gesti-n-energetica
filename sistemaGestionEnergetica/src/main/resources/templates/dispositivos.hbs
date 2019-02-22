@@ -1,0 +1,105 @@
+{{#partial "contenido"}}
+<div class="container text-center">
+	<h2>Dispositivos Inteligentes</h2>
+<table class="table table-responsive table-hover">
+		<thead class="thead-dark">
+			<tr class="success">
+				<th scope="col"class="align-middle text-center">Nombre del dispositivo</th>
+				<th scope="col"class="align-middle text-center">Estado Actual</th>
+				<th scope="col"class="align-middle text-center">Posee ese estado desde</th>
+				<th scope="col"class="align-middle text-center">Caracteristica</th>
+				<th scope="col"class="align-middle text-center">Puntos que posee</th>
+			  <th scope="col"class="align-middle text-center">Tiene activado el modo automatico?</th>
+				<th scope="col"class="align-middle text-center">Consumo en el &uacuteltimo mes</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each dispInteligentes}}
+				<tr>
+					<td scope="row" class="align-middle">{{nombre}}
+					</td>
+					<td scope="row" class="align-middle">{{estasPrendido}}
+					</td>
+					<td scope="row" class="align-middle">{{estadoActual.fechaInicio}}
+					</td>
+					<td scope="row" class="align-middle">{{caracteristica.nombre}}
+					</td>
+					<td scope="row" class="align-middle">{{puntos}}
+					</td>
+					<td scope="row" class="align-middle">{{consumoEnModoAutomatico}}
+					</td>
+					<td scope="row" class="align-middle">{{consumoMensual}}
+					</td>
+					<td scope="row" class="align-middle">
+						<button type="button" class="btn btn-info" onclick="dispositivoDetalle('{{id}}')">
+							Modificar
+						</button>
+					</td>
+					<td scope="row" class="align-middle">
+						<button type="button" class="btn btn-danger" onclick="dispositivoEliminar('{{id}}')">
+							Eliminar
+						</button>
+					</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+		<button type="button" class="btn btn-info" onclick="dispositivoNuevo(true, '{{aliasCliente}}')">
+			Agregar nuevo Dispositivo Inteligente
+		</button>
+		<p></p>
+		<p></p>
+		<br>
+    <br>
+		<h2>Dispositivos Standards</h2>
+
+<table class="table table-responsive table-hover">
+		<thead class="thead-dark">
+			<tr class="success">
+			<th scope="col"class="align-middle text-center">Nombre del dispositivo</th>
+			<th scope="col"class="align-middle text-center">Horas Uso Diario</th>
+			<th scope="col"class="align-middle text-center">Consumo Por Hora</th>
+			<th scope="col"class="align-middle text-center">Caracteristica</th>
+			<th scope="col"class="align-middle text-center">Consumo en el &uacuteltimo mes</th>
+			<th></th>
+			<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each dispStandards}}
+				<tr>
+					<td scope="row" class="align-middle">{{nombre}}
+					</td>
+					<td scope="row" class="align-middle">{{horasUsoDiario}}
+					</td>
+					<td scope="row" class="align-middle">{{consumoPorHora}}
+					</td>
+					<td scope="row" class="align-middle">{{caracteristica.nombre}}
+					</td>
+					<td scope="row" class="align-middle">{{consumoMensual}}
+					</td>
+					<td scope="row" class="align-middle">
+						<button type="button" class="btn btn-info" onclick="dispositivoDetalle('{{id}}')">
+							Modificar
+						</button>
+					</td>
+					<td scope="row" class="align-middle">
+						<button type="button" class="btn btn-danger" onclick="dispositivoEliminar('{{id}}')">
+							Eliminar
+						</button>
+					</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+
+	<button type="button" class="btn btn-info" onclick="dispositivoNuevo(false, '{{aliasCliente}}')">
+		Agregar nuevo Dispositivo Standard
+	</button>
+</div>
+<script type="text/javascript" src="/js/commons.js"></script>
+<script type="text/javascript" src="/js/dispositivos.js"></script>
+{{/partial}}
+{{>paginaBase.hbs}}

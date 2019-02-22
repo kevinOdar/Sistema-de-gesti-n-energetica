@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+    http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" 
+    version="2.0"> 
+  
+    <persistence-unit name="db" transaction-type="RESOURCE_LOCAL">
+    	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+	
+		<!-- Parametros sistema -->
+		<class>models.configurador.ParametroSistema</class>
+		
+    	<!-- Dispositivos -->
+    	<class>models.entities.dispositivo.Dispositivo</class>
+    	<class>models.entities.dispositivo.Inteligente</class>
+		<class>models.entities.dispositivo.Standard</class>
+    	<class>models.entities.dispositivo.Caracteristica</class>
+		
+		<class>models.entities.dispositivo.estado.EstadoDispositivo</class>
+		<class>models.entities.dispositivo.estado.HistorialDeEstados</class>
+		<class>models.entities.dispositivo.estado.tipos.TipoEstado</class>
+		<class>models.entities.dispositivo.estado.Prendido</class>
+		<class>models.entities.dispositivo.estado.Apagado</class>
+		<class>models.entities.dispositivo.estado.AhorroDeEnergia</class>
+		
+		<!-- Dominio -->
+    	<class>models.entities.dominio.Usuario</class>
+    	<class>models.entities.dominio.Administrador</class>
+    	<class>models.entities.dominio.ClienteResidencial</class>
+    	<class>models.entities.dominio.CategoriaConsumo</class>
+		
+		<!-- Reglas Actuadores -->
+		<class>models.entities.regla.actuadores.ActuadorBase</class>
+		<class>models.entities.regla.actuadores.Prender</class>
+		<class>models.entities.regla.actuadores.Apagar</class>
+		<class>models.entities.regla.actuadores.SubirIntensidad</class>
+		<class>models.entities.regla.actuadores.BajarIntensidad</class>
+		<class>models.entities.regla.actuadores.SetearTimer</class>
+		<class>models.entities.regla.actuadores.PasarAModoAhorroEnergia</class>
+		
+		<!-- Reglas -->
+    	<class>models.entities.regla.Regla</class>
+		
+		<!-- Reglas criterios -->
+		<class>models.entities.regla.criterios.Criterio</class>
+		<class>models.entities.regla.criterios.Distinto</class>
+		<class>models.entities.regla.criterios.Igualdad</class>
+		<class>models.entities.regla.criterios.Mayor</class>
+		<class>models.entities.regla.criterios.Menor</class>
+		<class>models.entities.regla.criterios.RangoExcluyente</class>
+		
+		<!-- Sensores -->
+    	<class>models.entities.sensor.Sensor</class>
+		
+		<!-- Transformadores -->    	
+    	<class>models.entities.transformadores.Coordenada</class>
+    	<class>models.entities.transformadores.Transformador</class>
+		<class>models.entities.transformadores.Ubicable</class>
+		<class>models.entities.zonaGeografica.ZonaGeografica</class>
+		
+		<!-- Generador reportes -->
+		<class>models.generadorReportes.Elemento</class>
+		
+		<properties> 
+	    <property name="hibernate.archive.autodetection" value="class"/>        
+        
+         
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" /> 
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/equipo-01" /> 
+            <property name="hibernate.connection.username" value="root" /> 
+            <property name="hibernate.connection.password" value="" /> 
+
+            
+<!-- 
+            <property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver" /> 
+            <property name="hibernate.connection.url" value="jdbc:hsqldb:mem:app-db" /> 
+            <property name="hibernate.connection.username" value="sa" /> 
+            <property name="hibernate.connection.password" value="" /> 
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+ -->
+                            
+            <property name="hibernate.show_sql" value="false" /> 
+            <property name="hibernate.format_sql" value="true" /> 
+            <property name="use_sql_comments" value="true" /> 
+            <property name="hibernate.hbm2ddl.auto" value="update" /> 
+        </properties>
+          
+    </persistence-unit> 
+  
+</persistence> 

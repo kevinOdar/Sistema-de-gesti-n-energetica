@@ -1,0 +1,30 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 id="tituloModal" class="modal-title text-center">Regla</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+        	 <div class="form-group">
+                <label>ID</label>
+                <input id="id" type="string" name="id" class="form-control" value="{{regla.id}}" disabled>
+            </div>
+
+             <div class="form-group">
+                 <label>Nombre</label>
+                 <input id="nombre" type="string" name="nombre" class="form-control" value="{{regla.nombre}}">
+             </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                Cerrar
+            </button>
+            <button type="button" class="btn btn-secondary"  onclick="reglaGuardar('{{regla.id}}')" >
+                Guardar
+            </button>
+        </div>
+    </div>
+</div>

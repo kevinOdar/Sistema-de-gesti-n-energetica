@@ -1,0 +1,57 @@
+{{#>modalBase.hbs}}
+{{#*inline "modalBody"}}
+			<div class="form-group">
+                <label>Nombre</label>
+                <input id="nombre" type="string" name="nombre" class="form-control" placeholder="Ingrese un nombre" value="{{caracteristica.nombre}}" {{#unless permiteEdicion}} disabled {{/unless}}>
+     
+                <label>Coeficiente de consumo</label>
+                <input id="coeficienteConsumo" type="string" name="coeficienteConsumo" class="form-control" placeholder="Ingrese un coeficiente de consumo" value="{{caracteristica.coeficienteDeConsumo}}" {{#unless permiteEdicion}} disabled {{/unless}}>
+     
+
+	           <label>Es inteligente</label>
+                {{#if esInteligente}}
+                <select id="selectInteligente" type="string" name="selectInteligente" class="form-control" placeholder="¿Es inteligente?" value="{{esInteligente}}" {{#unless permiteEdicion}} disabled {{/unless}}>                
+                <option value="true" selected>Si</option>
+                <option value="false">No</option>
+                </select>
+                {{else}}
+                <select id="selectInteligente" type="string" name="selectInteligente" class="form-control" placeholder="¿Es inteligente?" value="{{esInteligente}}" {{#unless permiteEdicion}} disabled {{/unless}}>
+                <option value="true" >Si</option>
+                <option value="false" selected>No</option>
+                </select>
+                {{/if}}
+                
+                <label>Es de bajo consumo</label>
+                {{#if esDeBajoConsumo}}
+                <select id="selectDeBajoConsumo" type="string" name="selectDeBajoConsumo" class="form-control" placeholder="¿Es de bajo consumo?" value="{{esDeBajoConsumo}}" {{#unless permiteEdicion}} disabled {{/unless}}>
+                <option value="true" selected>Si</option>
+                <option value="false">No</option>
+                </select>
+                {{else}}
+                <select id="selectDeBajoConsumo" type="string" name="selectDeBajoConsumo" class="form-control" placeholder="¿Es de bajo consumo?" value="{{esDeBajoConsumo}}" {{#unless permiteEdicion}} disabled {{/unless}}>
+                <option value="true" >Si</option>
+                <option value="false" selected>No</option>
+                </select>
+                {{/if}}			
+    
+    			<label>Límite inferior de consumo</label>
+                <input id="menorIgual" type="string" name="menorIgual" class="form-control" placeholder="Ingrese un límite inferior de consumo" value="{{caracteristica.restriccionMayorIgual}}" {{#unless permiteEdicion}} disabled {{/unless}}>
+    
+	            <label>Límite superior de consumo</label>
+                <input id="mayorIgual" type="string" name="mayorIgual" class="form-control" placeholder="Ingrese un límite superior de consumo" value="{{caracteristica.restriccionMenorIgual}}" {{#unless permiteEdicion}} disabled {{/unless}}>
+        </div>
+{{/inline}}
+
+{{#*inline "modalFooter"}}
+            {{#if modificarDatos}}
+            <button type="button" class="btn btn-secondary" onclick="caracteristicaGuardar('{{caracteristica.id}}')">
+                Guardar
+            </button>
+            {{/if}}
+            {{#if caracteristicaNueva}}
+            <button type="button" class="btn btn-secondary" onclick="guardarNueva()">
+                Crear
+            </button>
+            {{/if}}
+ {{/inline}}
+{{/modalBase.hbs}}

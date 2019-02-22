@@ -1,0 +1,30 @@
+{{#partial "contenido"}}
+<div class="container text-center">
+	<h2>Mediciones</h2>
+{{#each inteligentes}}
+<dt>Mediciones del dispositivo "{{caracteristica.nombre}}"</dt>
+<div class="mx-auto" style="width: 450px;">
+	<table class="table table-responsive table-hover table-sm">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col"class="align-middle text-center">Nombre regla</th>
+				<th scope="col"class="align-middle text-center">Mediciones</th>
+			</tr>
+		</thead>
+		<tbody>
+		    {{#each reglas as |regla|}}
+					{{#each sensores as |sensor|}}
+			     <tr>
+				        <td scope="row" class="align-middle">{{regla.nombre}}</td>
+                <th scope="row" class="align-middle">{{sensor.mediciones}}</th>
+          </tr>
+					{{/each}}
+        {{/each}}
+		</tbody>
+	</table>
+	</div>
+{{/each}}
+</div>
+
+{{/partial}}
+{{>paginaBase.hbs}}

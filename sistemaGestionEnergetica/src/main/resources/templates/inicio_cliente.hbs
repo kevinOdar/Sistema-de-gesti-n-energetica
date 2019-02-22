@@ -1,0 +1,78 @@
+{{#partial "contenido"}}
+
+ <br>
+ <br>
+<div>
+<div class="columnas2">
+
+    <h1>Mi Hogar</h1>
+    <img src="/img/img02.png" style="width:200px;height:150px;">
+	<p><button type="submit" class="btn btn-info btn-lg" onclick="opcionesEstadoHogar('{{alias}}')">
+    	Ver Estado del Hogar
+    </button></p>
+
+    <h1>Consumo</h1>
+    <img src="/img/img05.png" style="width:200px;height:150px;">
+	<p><button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#preguntarIntervaloConsumo">
+    	Consultar Consumo
+    </button></p>
+
+    <h1>Optimización</h1>
+    <img src="/img/img18.png" style="width:200px;height:150px;">
+    <p><a href="/cliente/optimizacion/{{alias}}"><button type="submit" class="btn btn-info btn-lg">Ejecutar Simplex</button></a></p>
+
+	<h1>Dispositivos</h1>
+    <img src="/img/img09.png" style="width:200px;height:150px;">
+	<p><a href="/cliente/dispositivos/{{alias}}"><button type="submit" class="btn btn-info btn-lg">Administrar dispositivos</button></a></p>
+
+	<h1>Reglas</h1>
+    <img src="/img/img19.png" style="width:200px;height:150px;">
+	<p><a href="/cliente/reglas/{{alias}}"><button type="submit" class="btn btn-info btn-lg">Administrar reglas</button></a></p>
+</div>
+</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+<!--comienza modal preguntarIntervaloConsumo -->
+<div id="preguntarIntervaloConsumo" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 id="tituloModal" class="modal-title text-center">Consultar consumo por periodo</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+      <div class="container-fluid text-center">
+          <div class="modal-body">
+      	  	<label for="fecha">Desde:
+      		  <input type="text" id="fechaDesde" value="" />
+      		  </label>
+
+        	   <label for="fecha">Hasta:
+        		 <input type="text" id="fechaHasta" value="" />
+        		 </label>
+          </div>
+      </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-hidden="true">
+                Cerrar
+            </button>
+            <button type="submit" class="btn btn-primary" data-dismiss="modal" aria-hidden="true" onclick="mostrarConsumoPorPeriodo('{{alias}}')">
+                Consultar
+            </button>
+        </div>
+
+    </div>
+	</div>
+</div>
+<script type="text/javascript" src="/js/datePicker.js"></script>
+<script type="text/javascript" src="/js/commons.js"></script>
+<script type="text/javascript" src="/js/clientes.js"></script>
+{{/partial}}
+{{>paginaBase.hbs}}

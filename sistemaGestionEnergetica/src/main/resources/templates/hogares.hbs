@@ -1,0 +1,43 @@
+{{#partial "contenido"}}
+<div class="container text-center">
+	<h3>Estado de los Hogares del sistema</h3>
+	<div class="mx-auto" style="width: 800px;">
+	<table class="table table-responsive table-hover table-sm">
+		<thead class="thead-dark">
+			<tr>
+			<th scope="col"class="align-middle text-center">#Id</th>
+			<th scope="col"class="align-middle text-center">Alias Cliente</th>
+			<th scope="col"class="align-middle text-center">Fecha alta servicio</th>
+			<th scope="col"class="align-middle text-center">Apellido</th>
+			<th scope="col"class="align-middle text-center">Nombre</th>
+			<th scope="col"class="align-middle text-center">Consumo actual</th>
+			<th scope="col"class="align-middle text-center">Consumo mensual</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each clientes}}
+				<tr>
+					<td scope="row" class="align-middle">{{id}}
+					</td>
+					<td scope="row" class="align-middle">{{aliasUsuario}}
+					</td>
+					<td scope="row" class="align-middle">{{fechaAltaServicioString}}
+					</td>
+					<td scope="row" class="align-middle">{{apellido}}
+					</td>
+					<td scope="row" class="align-middle">{{nombre}}
+					</td>
+					<td scope="row" class="align-middle">{{consumoActual}}
+					</td>
+					<td scope="row" class="align-middle">{{consumoMensual}}
+					</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</div>
+</div>
+<script type="text/javascript" src="/js/commons.js"></script>
+<script type="text/javascript" src="/js/caracteristicas.js"></script>
+{{/partial}}
+{{>paginaBase.hbs}}

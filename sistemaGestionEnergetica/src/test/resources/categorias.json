@@ -1,0 +1,74 @@
+[{	
+	"nombre" : "R1"	,
+	"cargoFijo" : 18.76,
+	"cargoVariable" : 0.644,
+	"consumoMax" : 150,
+	"consumoMin" : 0
+	
+},
+
+{	
+	"nombre" :	"R2",
+	"cargoFijo" : 35.32,
+	"cargoVariable" : 0.644,
+	"consumoMax" : 325,
+	"consumoMin" : 150
+	
+},
+
+{	"nombre" :	"R3",
+	"cargoFijo" : 60.71,
+	"cargoVariable" : 0.681,
+	"consumoMax" : 400,
+	"consumoMin" : 325
+	
+},
+
+{	"nombre" :	"R4",
+	"cargoFijo" : 71.74,
+	"cargoVariable" : 0.738,
+	"consumoMax" : 450,
+	"consumoMin" : 400
+	
+},
+
+{	"nombre" :	"R5",
+	"cargoFijo" : 110.38,
+	"cargoVariable" : 0.794,
+	"consumoMax" : 500,
+	"consumoMin" : 450
+	
+},
+
+{	"nombre" :	"R6",
+	"cargoFijo" : 220.75,
+	"cargoVariable" : 0.832,
+	"consumoMax" : 600,
+	"consumoMin" : 500
+	
+},
+
+{	"nombre" :	"R7",
+	"cargoFijo" : 443.59,
+	"cargoVariable" : 0.851,
+	"consumoMax" : 700,
+	"consumoMin" : 600
+	
+},
+
+{	"nombre" :	"R8",
+	"cargoFijo" : 545.96,
+	"cargoVariable" : 0.851,
+	"consumoMax" : 1400,
+	"consumoMin" : 700
+	
+},
+
+{	"nombre" :	"R9",
+	"cargoFijo" : 887.19,
+	"cargoVariable" : 0.851,
+	"consumoMax" : 1400,
+	"consumoMin" : 1400
+	
+}
+]

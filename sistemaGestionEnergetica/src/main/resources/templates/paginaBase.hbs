@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		rel="stylesheet"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+		crossorigin="anonymous">
+
+	<title>Sistema de gestion energetica</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+<!-- para el calendario -->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+
+{{#> head-block}}
+{{/head-block}}
+
+<!-- Estilos CSS-->
+<link rel="stylesheet" type="text/css" href="/css/estilos.css">
+
+
+<link rel="icon" 
+      type="image/png" 
+	href="/images/icon.png">
+	
+</head>
+<body>
+<div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<a class="navbar-brand" href="/">SGE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+		</button>
+
+        <div id="navbarNavDropdown" class="navbar-collapse collapse">
+			<ul class="navbar-nav mr-auto">
+				{{#if esAdmin}}
+					<li class="nav-item active"><a class="nav-link" href="/admin/inicio_admin/{{usuario.aliasUsuario}}">Inicio</a></li>
+				{{else}}
+					{{#if esCliente}}
+					<li class="nav-item"><a class="nav-link" href="/cliente/inicio_cliente/{{usuario.aliasUsuario}}">Inicio</a></li>
+					{{else}}
+					<li class="nav-item"><a class="nav-link" href="/inicio">Inicio</a></li>
+					{{/if}}
+				{{/if}}
+					<li class="nav-item"> <a class="nav-link" href="/equipo">Sobre esta web</a></li>
+				    <!-- <li class="nav-item"><a class="nav-link" href="/mapa_consumo">Mapa de Consumo</a></li> -->
+			</ul>
+			{{#if logueado}}
+			<ul class="nav navbar-nav">
+		<li class="nav-item"><a class="nav-link" href="/logout">Cerrar sesion</a></li>
+		</ul>
+		{{/if}}
+		</div><!-- /.container -->
+</nav>
+</div>
+
+	<div class="container-fluid text-center">
+		<h1>{{header}}</h1>
+	</div>
+
+	<!-- /.container -->
+	<div class="container-fluid text-center">
+	{{#block "contenido"}}
+		{{/block}}
+	</div>
+
+	<!-- /.container -->
+	{{#if mostrarBotonMapa}}
+	<div class="container-fluid text-center">
+		<p>
+			<a href="/mapa_consumo"><button type="button"
+					class="btn btn-secondary">Ver mapa de consumo</button></a>
+		</p>
+
+	</div>
+	{{/if}}
+    <div id="modal" class="modal fade" role="dialog"></div>
+
+
+</body>
+</html>

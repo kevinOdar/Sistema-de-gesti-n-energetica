@@ -1,0 +1,32 @@
+{{#>modalBase.hbs}}
+{{#*inline "modalBody"}}
+	<div class="form-group">
+		<label>Nombre</label>
+		<input id="nombre" type="string" name="nombre" class="form-control" placeholder="Ingrese un nombre" value="{{categoria.nombre}}" {{#unless permiteEdicion}} disabled {{/unless}}>
+		
+		<label>Consumo minimo</label>
+		<input id="consumoMinimo" type="string" name="consumoMinimo" class="form-control" placeholder="Ingrese un consumo minimo" value="{{categoria.consumoMinimo}}" {{#unless permiteEdicion}} disabled {{/unless}}>
+		
+		<label>Consumo maximo</label>
+		<input id="consumoMaximo" type="string" name="consumoMaximo" class="form-control" placeholder="Ingrese un consumo maximo" value="{{categoria.consumoMaximo}}" {{#unless permiteEdicion}} disabled {{/unless}}>
+		
+		<label>Cargo fijo</label>
+		<input id="cargoFijo" type="string" name="cargoFijo" class="form-control" placeholder="Ingrese un cargo fijo" value="{{categoria.cargoFijo}}" {{#unless permiteEdicion}} disabled {{/unless}}>
+		
+		<label>Cargo variable</label>
+		<input id="cargoVariable" type="string" name="cargoVariable" class="form-control" placeholder="Ingrese un cargo variable" value="{{categoria.cargoVariable}}"{{#unless permiteEdicion}} disabled {{/unless}}>
+	</div>
+{{/inline}}
+
+{{#*inline "modalFooter"}}
+
+	{{#if modificarDatos}}
+	<button type="button" class="btn btn-secondary" onclick="categoriaGuardar('{{categoria.id}}')">Guardar</button>
+	{{/if}}
+	
+	{{#if categoriaNueva}}
+	<button type="button" class="btn btn-secondary" onclick="guardarNueva()">Crear</button>
+	{{/if}}
+	
+ {{/inline}}
+{{/modalBase.hbs}}

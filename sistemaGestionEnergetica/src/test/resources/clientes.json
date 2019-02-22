@@ -1,0 +1,50 @@
+[
+  {
+    "nombre": "cosmeFulanito",
+    "edad": 24,
+    "tipoDocumento": "dni",
+	"numero documento": 232323,
+	"telefono": 4323,
+	"domicilio": "cucha cucha 2137",
+	"fecha_alta":  null,
+	"dispositivos": null,
+	"alias usuario": "atomix2009",
+	"categoria" : null,
+	"fechaAltaServicio" : null,
+	"puntosAcumulados": 15,
+	"ubicacion": null,
+	"consumoEnAutomatico": true
+  },
+  {
+    "nombre": "kevin",
+    "edad": 24,
+    "tipo documento": "dni",
+	"numero documento": 232323,
+	"telefono": 4323,
+	"domicilio": "cucha cucha 2137",
+	"fecha_alta":  null,
+	"dispositivos": null,
+	"alias usuario": "atomix2009",
+	"categoria" : null,
+	"fechaAltaServicio" : null,
+	"puntosAcumulados": 15,
+	"ubicacion": null,
+	"consumoEnAutomatico": true
+  },
+  {
+    "nombre": "armando",
+    "edad": 24,
+    "tipo documento": "dni",
+	"numero documento": 232323,
+	"telefono": 4323,
+	"domicilio": "cucha cucha 2137",
+	"fecha_alta": null,
+	"dispositivos": null,
+	"alias usuario": "atomix2009",
+	"categoria" : null,
+	"fechaAltaServicio" : null,
+	"puntosAcumulados": 15,
+	"ubicacion": null,
+	"consumoEnAutomatico": true
+  }
+]

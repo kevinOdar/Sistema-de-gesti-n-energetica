@@ -1,0 +1,85 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 id="tituloModal" class="modal-title text-center">Dispositivo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+          {{#unless esNuevo}}
+        	 <div class="form-group">
+                <label>ID</label>
+                <input id="id" type="string" name="id" class="form-control" value="{{dispositivo.id}}" disabled>
+            </div>
+          {{/unless}}
+           <div class="form-group">
+               <label>Caracteristica</label>
+               <select id="caracteristica" type="string" name="caracteristica" class="form-control" value="{{dispositivo.caracteristica.nombre}}">
+               {{#each caracteristicas}}
+                  <option>{{nombre}}</option>
+               {{/each}}
+               </select>
+            </div>
+
+            {{#if esInteligente}}
+             <div class="form-group">
+                <label>Tiene activado el modo automatico?</label>
+                <select id="modoAutomatico" type="string" name="modoAutomatico" class="form-control" value="{{dispositivo.consumoEnModoAutomatico}}">
+                <option value="true">Si</option>
+                <option value="false">No</option>
+                </select>
+             </div>
+
+             <div class="form-group">
+                 <label>Intensidad</label>
+                 <input id="intensidad" type="string" name="intensidad" class="form-control" value="{{dispositivo.intensidad}}">
+             </div>
+             {{/if}}
+
+             {{#unless esInteligente}}
+             <div class="form-group">
+               <label>Horas Uso Diario</label>
+               <input id="horasUsoDiario" type="string" name="horasUsoDiario" class="form-control" value="{{dispositivo.horasUsoDiario}}">
+             </div>
+             <div class="form-group">
+               <label>Consumo Por Hora</label>
+               <input id="consumoPorHora" type="string" name="consumoPorHora" class="form-control" value="{{dispositivo.consumoPorHora}}">
+             </div>
+             {{/unless}}
+
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                Cerrar
+            </button>
+
+            {{#if esInteligente}}
+                {{#if esNuevo}}
+                <button type="button" class="btn btn-secondary" onclick="guardarNuevoInteligente('{{aliasCliente}}')">
+                    Guardar Nuevo
+                </button>
+                {{/if}}
+                {{#unless esNuevo}}
+                <button type="button" class="btn btn-secondary"  onclick="dispositivoInteligenteGuardar('{{dispositivo.id}}')" >
+                  Guardar
+                </button>
+                {{/unless}}
+            {{/if}}
+
+            {{#unless esInteligente}}
+              {{#if esNuevo}}
+              <button type="button" class="btn btn-secondary" onclick="guardarNuevoStandard('{{aliasCliente}}')">
+                  Guardar Nuevo
+              </button>
+              {{/if}}
+              {{#unless esNuevo}}
+              <button type="button" class="btn btn-secondary"  onclick="dispositivoStandardGuardar('{{dispositivo.id}}')" >
+                Guardar
+              </button>
+              {{/unless}}
+            {{/unless}}
+        </div>
+    </div>
+</div>

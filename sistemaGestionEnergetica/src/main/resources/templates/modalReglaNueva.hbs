@@ -1,0 +1,60 @@
+{{#>modalBase.hbs}}
+{{#*inline "modalBody"}}
+			<div class="form-group">
+                <label>Nombre de la regla</label>
+                <input id="nombre" type="string" name="nombre" class="form-control" placeholder="Ingrese un nombre" >
+
+						<label>Sensor con el que estar&aacute asociado</label>
+										<select id="selectSensor" type="string" name="selectSensor" class="form-control" placeholder="Seleccione un sensor">
+												{{#each sensor}}
+													<option value={{id}}>{{nombreSensorHW}}</option>
+												{{/each}}
+										</select>
+
+						<label>Dispositivo con el que estar&aacute asociado</label>
+								<select id="selectDispInteligente" type="string" name="selectDispInteligente" class="form-control" placeholder="Seleccione un dispositivo">
+										{{#each dispInteligente}}
+											<option value={{id}}>{{nombre}}</option>
+										{{/each}}
+								</select>
+
+						<label>Acci&oacuten a ejecutar</label>
+							<select id="selectActuador" type="string" name="selectActuador" class="form-control" placeholder="Seleccione un actuador">
+									<option disabled hidden selected>Elija una opci&oacuten...</option>
+									<option value="Prender" >Prender</option>
+									<option value="Apagar" >Apagar</option>
+									<option value="PasarAModoAhorroEnergia" >Pasar a modo ahorro energ&iacutea</option>
+									<option value="SubirIntensidad" >Subir intensidad</option>
+									<option value="BajarIntensidad" >Bajar intensidad</option>
+						</select>
+
+						<label>Criterio de activaci&oacuten</label>
+							 <select id="selectCriterio" type="string" name="selectCriterio" class="form-control" placeholder="Seleccione un criterio" onchange="seleccionado()">
+									 <option selected value="">Elija una opci&oacuten...</option>
+									 <option value="Igualdad">Igualdad</option>
+									 <option value="RangoExcluyente">Rango</option>
+									 <option value="Mayor">Mayor</option>
+									 <option value="Menor">Menor</option>
+									 <option value="Distinto">Distinto</option>
+							 </select>
+
+							 	 <div id="comparacion">
+									 	<label>Ingrese un valor</label>
+										<input id="valorComparacion" type="string" name="valorComparacion" class="form-control" placeholder="Ingrese un valor" value="0">
+							 		</div>
+
+							 		<div id="rango">
+											<label>Ingrese un l&iacutemite inferior</label>
+											<input id="rangoMenor" type="string" name="rangoMenor" class="form-control" placeholder="Ingrese un valor" value="0">
+											<label>Ingrese un l&iacutemite superior</label>
+											<input id="rangoMayor" type="string" name="rangoMayor" class="form-control" placeholder="Ingrese un valor" value="0">
+							 		</div>
+</div>
+{{/inline}}
+
+{{#*inline "modalFooter"}}
+            <button type="button" class="btn btn-secondary" onclick="guardarNueva()">
+                Crear
+            </button>
+{{/inline}}
+{{/modalBase.hbs}}

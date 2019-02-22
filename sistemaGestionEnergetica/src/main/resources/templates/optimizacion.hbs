@@ -1,0 +1,61 @@
+{{#partial "contenido"}}
+<div class="container text-center">
+	<h3>Dispositivos</h3>
+<div class="mx-auto" style="width: 450px;">
+<table class="table table-responsive table-hover table-sm">
+		<thead class="thead-dark">
+			<tr>
+			<th scope="col"class="align-middle text-center">Nombre</th>
+			<th scope="col"class="align-middle text-center">Consumo Mensual</th>
+			<th scope="col"class="align-middle text-center">Consumo Recomendado</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each dispositivosCliente}}
+				<tr>
+					<td scope="row" class="align-middle">{{nombre}}
+					</td>
+					<td scope="row" class="align-middle">{{consumohs}}
+					</td>
+					<td scope="row" class="align-middle">{{consumoRecomendado}}
+					</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</div>
+<br>
+<br>
+	<h3>Hogar Eficiente</h3>
+<div class="mx-auto" style="width: 450px;">
+	<table class="table table-responsive table-hover">
+		<thead class="thead-dark">
+			<tr>
+					<th scope="col"class="align-middle text-center">Consumo Mensual</th>
+          <th scope="col"class="align-middle text-center">Consumo Recomendado</th>
+					<th scope="col"class="align-middle text-center">Es un hogar eficiente?</th>
+			</tr>
+		</thead>
+		<tbody>
+				<tr>
+					<td scope="row" class="align-middle">{{consumoTotal}}</td>
+          <td scope="row" class="align-middle">{{solucionSimplex}}</td>
+					{{#if hogarEficiente}}
+					<td scope="row" class="align-middle">Si</td>
+					{{/if}}
+					{{#unless hogarEficiente}}
+					<td scope="row" class="align-middle">No</td>
+					{{/unless}}
+				</tr>
+		</tbody>
+	</table>
+</div>
+
+<br>
+<br>
+<h6 class="font-italic"> *Los valores del consumo estan expresados en horas. </h6>
+</div>
+
+
+{{/partial}}
+{{>paginaBase.hbs}}

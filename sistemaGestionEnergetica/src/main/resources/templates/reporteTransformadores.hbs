@@ -1,0 +1,29 @@
+<div>
+<table class="table table-responsive table-hover table-sm">
+		<thead class="thead-dark">
+			<tr>
+			<th scope="col"class="align-middle text-center">#Id</th>
+			<th scope="col"class="align-middle text-center">Nombre</th>
+			<th scope="col"class="align-middle text-center">Consumo</th>
+			<th scope="col"class="align-middle text-center">Fecha inicio periodo</th>
+			<th scope="col"class="align-middle text-center">Fecha fin periodo</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each transformadores}}
+				<tr>
+					<td scope="row" class="align-middle">{{idObjeto}}
+					</td>
+					<td scope="row" class="align-middle">{{nombre}}
+					</td>
+					<td scope="row" class="align-middle">{{valor}}
+					</td>
+					<td scope="row" class="align-middle">{{fechaInicioString}}
+					</td>
+					<td scope="row" class="align-middle">{{fechaFinString}}
+					</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</div>
